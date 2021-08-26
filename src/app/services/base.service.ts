@@ -20,7 +20,7 @@ export class BaseService {
         return { headers: headers };
     }
 
-    protected getBaseUrl() : string {
+    public getBaseUrl() : string {
         return this._baseUrl;
     }
 }
