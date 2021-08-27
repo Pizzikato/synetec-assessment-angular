@@ -10,4 +10,12 @@ export class CitiesEndpoint extends BaseService {
     constructor(private _httpClient: HttpClient, private _injector: Injector) {
         super(_httpClient, _injector);
     }
+public getCities():Observable<ICity[]> {
+return this._httpClient.get().subscribe();
+} 
+
+public deleteCity(id:number):Observable<ICity>{
+return this._httpClient.delete().subscribe();
+} 
+
 }
