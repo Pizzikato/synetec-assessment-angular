@@ -9,16 +9,15 @@ import { BaseService } from "../base.service";
 export class CitiesService{
 
 
-    constructor(private _citiesEndpoint: CitiesEndpoint,
-        private _http: HttpClient) {
+    constructor(private _citiesEndpoint: CitiesEndpoint) {
         }
 
     getCities(): Observable<ICity[]> {  
-        return this._http.get<ICity[]>(this._citiesEndpoint.getBaseUrl() + 'api/cities');  
+        return this._citiesEndpoint.getCities();  
     }  
 
     deleteCity(id: number): Observable<ICity> {  
-        return this._http.delete<ICity>(`${this._citiesEndpoint.getBaseUrl()}api/cities/delete-city/${id}`)  
+        return this._citiesEndpoint.deleteCity(id); 
     }  
        
 }
