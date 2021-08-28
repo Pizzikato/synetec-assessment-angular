@@ -9,14 +9,13 @@ import { BaseService } from "../base.service";
 export class CitiesService{
 
 
-    constructor(private _citiesEndpoint: CitiesEndpoint) {
-        }
+    constructor(private _citiesEndpoint: CitiesEndpoint) {}
 
     getCities(): Observable<ICity[]> {  
         return this._citiesEndpoint.getCities();  
     }  
 
-    deleteCity(id: number): Observable<ICity> {  
+    deleteCity(id: number): Observable<void> {  
         return this._citiesEndpoint.deleteCity(id); 
     }  
        
