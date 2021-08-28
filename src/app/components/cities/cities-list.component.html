@@ -25,8 +25,8 @@
                     </tbody>
                 </table>
             </div>
-            <div *ngIf="!cities">
-                <p> There are no City</p>
+            <div *ngIf="!cities || cities.length === 0">
+                <p>There are no city to display</p>
             </div>
             <div *ngIf="message">
                 {{message}}</div>
