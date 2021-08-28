@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h4>Cities list {{message}}</h4>
+            <h4>Cities list</h4>
             <div class="table-responsive">
                 <table *ngIf="cities" id="city-table" class="table table-bordred table-striped">
                     <thead>
@@ -15,7 +15,8 @@
                             <td>{{item.description}}</td>
                             <td>
                                 <p data-placement="top" data-toggle="tooltip" title="Delete">
-                                    <button class="btn btn-danger btn-xs" data-title="Delete" (click)="delete(item.id)" data-toggle="modal" data-target="#delete">
+                                    <button class="btn btn-danger btn-xs" data-title="Delete" (click)="delete(item)"
+                                        data-toggle="modal" data-target="#delete">
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </button>
                                 </p>
@@ -24,6 +25,11 @@
                     </tbody>
                 </table>
             </div>
+            <div *ngIf="!cities">
+                <p> There are no City</p>
+            </div>
+            <div *ngIf="message">
+                {{message}}</div>
         </div>
     </div>
 </div>
