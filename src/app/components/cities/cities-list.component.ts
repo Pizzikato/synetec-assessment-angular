@@ -36,12 +36,15 @@ export class CitiesListComponent implements OnInit {
 
     if (confirm(`Are you sure you wish to delete ${city.name} city ?`)) {
       this._citiesService.deleteCity(city.id).subscribe(() => {
-        if (environment.production) this.getCities();
+        if (environment.production) this.getCities();//only for this exercise
         else {
           const index = this.cities.findIndex(c => c.id === city.id);
           this.cities.splice(index, 1);
         }
         this.message = "City deleted Successful";
+      },
+      (error: HttpErrorResponse) => {
+        this.message = 'Error deleting city';
       });
     }
 
